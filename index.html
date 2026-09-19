@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MIET Smart Campus Navigation</title>
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
+
+    <!-- Our CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="topbar">
+
+        <div class="brand">
+            <div class="brand-icon">
+                <img src="miet-logo.png" alt="MIET Logo">
+            </div>
+
+            <div>
+                <h1>MIET Smart Campus</h1>
+                <p>Campus Navigation System</p>
+            </div>
+        </div>
+
+        <div class="header-actions">
+
+            <button id="themeToggle" class="theme-toggle" title="Toggle night mode">
+                🌙
+            </button>
+
+            <div class="status">
+                <span class="status-dot"></span>
+                MIET Campus
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- Main Application -->
+    <main class="app">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <h2>Find a Location</h2>
+
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search building, library..." autocomplete="off">
+                <button id="searchBtn">🔍</button>
+            </div>
+
+            <div class="quick-title">
+                Quick Access
+            </div>
+
+            <div class="quick-access">
+
+                <button class="quick-access-btn" onclick="showCategory('academic')">
+                    <span>🏫</span>
+                    <div>
+                        <strong>Academic</strong>
+                        <small>Buildings & departments</small>
+                    </div>
+                </button>
+
+
+                <button class="quick-access-btn" onclick="showCategory('library')">
+                    <span>📚</span>
+                    <div>
+                        <strong>Libraries</strong>
+                        <small>Find campus libraries</small>
+                    </div>
+                </button>
+
+
+                <button class="quick-access-btn" onclick="showCategory('hostel')">
+                    <span>🛏️</span>
+                    <div>
+                        <strong>Hostels</strong>
+                        <small>Boys, girls & faculty</small>
+                    </div>
+                </button>
+
+
+                <button class="quick-access-btn" onclick="showCategory('facilities')">
+                    <span>🏢</span>
+                    <div>
+                        <strong>Facilities</strong>
+                        <small>Campus services</small>
+                    </div>
+                </button>
+
+
+                <button class="quick-access-btn" onclick="showCategory('sports')">
+                    <span>🏀</span>
+                    <div>
+                        <strong>Sports</strong>
+                        <small>Courts & gym</small>
+                    </div>
+                </button>
+
+
+                <button class="quick-access-btn" onclick="showCategory('parking')">
+                    <span>🅿️</span>
+                    <div>
+                        <strong>Parking</strong>
+                        <small>Parking areas</small>
+                    </div>
+                </button>
+
+
+                <button class="quick-access-btn" onclick="showCategory('food')">
+                    <span>🍴</span>
+                    <div>
+                        <strong>Food</strong>
+                        <small>Canteen & food areas</small>
+                    </div>
+                </button>
+
+
+                <button class="quick-access-btn" onclick="showCategory('gate')">
+                    <span>🚪</span>
+                    <div>
+                        <strong>Gates</strong>
+                        <small>Campus entrances</small>
+                    </div>
+                </button>
+
+            </div>
+
+            <div class="results" id="results">
+
+                <div class="welcome">
+                    <div class="welcome-icon">🗺️</div>
+
+                    <h3>Welcome to MIET</h3>
+
+                    <p>
+                        Search for a building, facility,
+                        library or hostel.
+                    </p>
+                </div>
+
+            </div>
+
+        </aside>
+
+
+        <!-- Map -->
+        <section class="map-container">
+
+            <div id="map"></div>
+
+            <!-- Map information card -->
+            <div class="map-info" id="mapInfo">
+
+                <strong>MIET Campus</strong>
+
+                <span>
+                    Meerut Institute of Engineering
+                    & Technology
+                </span>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js">
+    </script>
+
+
+    <!-- Our JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>

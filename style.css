@@ -1,0 +1,4971 @@
+/* =========================================================
+   MIET SMART CAMPUS NAVIGATION
+   Modern UI
+   ========================================================= */
+
+
+/* =========================================================
+   GLOBAL
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    font-family:
+        Inter,
+        "Segoe UI",
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #f1f5f9;
+    color: #0f172a;
+}
+
+body {
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   TOP BAR
+   ========================================================= */
+
+.topbar {
+    height: 72px;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 26px;
+
+    background: rgba(255, 255, 255, 0.97);
+
+    border-bottom: 1px solid #e2e8f0;
+
+    box-shadow:
+        0 1px 4px rgba(15, 23, 42, 0.04);
+
+    position: relative;
+    z-index: 2000;
+}
+
+
+/* =========================================================
+   BRAND
+   ========================================================= */
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.brand-icon {
+    width: 56px;
+    height: 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: white;
+    border-radius: 8px;
+
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.brand-icon img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    display: block;
+}
+
+.brand h1 {
+    font-size: 18px;
+    font-weight: 700;
+
+    color: #0f172a;
+
+    letter-spacing: -0.2px;
+}
+
+.brand p {
+    margin-top: 3px;
+
+    font-size: 11px;
+
+    color: #64748b;
+
+    letter-spacing: 0.15px;
+}
+
+
+/* =========================================================
+   CAMPUS STATUS
+   ========================================================= */
+
+.status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 8px 13px;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 999px;
+
+    background: #f8fafc;
+
+    color: #475569;
+
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #22c55e;
+
+    box-shadow:
+        0 0 0 3px rgba(34, 197, 94, 0.12);
+}
+
+
+/* =========================================================
+   MAIN APP
+   ========================================================= */
+
+.app {
+    width: 100%;
+    height: calc(100vh - 72px);
+
+    display: flex;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+.sidebar {
+    flex: 0 0 365px;
+
+    width: 365px;
+    height: 100%;
+
+    padding: 24px 20px;
+
+    background: #ffffff;
+
+    border-right: 1px solid #e2e8f0;
+
+    overflow-y: auto;
+
+    z-index: 1000;
+
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e1 transparent;
+}
+
+.sidebar::-webkit-scrollbar {
+    width: 5px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
+}
+
+.sidebar h2 {
+    margin-bottom: 15px;
+
+    font-size: 20px;
+    font-weight: 700;
+
+    color: #0f172a;
+
+    letter-spacing: -0.3px;
+}
+
+
+/* =========================================================
+   PROFESSIONAL SEARCH BOX
+========================================================= */
+
+.search-box {
+
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    background: #f9fafb;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.search-box:focus-within {
+
+    background: white;
+
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.10);
+}
+
+
+.search-box input {
+
+    flex: 1;
+
+    min-width: 0;
+
+    height: 48px;
+
+    padding:
+        0 13px;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    color: #111827;
+
+    font-size: 14px;
+}
+
+
+.search-box input::placeholder {
+
+    color: #9ca3af;
+}
+
+
+.search-box button {
+
+    width: 48px;
+    height: 48px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+
+    background: #111827;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+    transition:
+        background 0.2s ease,
+        transform 0.15s ease;
+}
+
+
+.search-box button:hover {
+
+    background: #2563eb;
+}
+
+
+.search-box button:active {
+
+    transform: scale(0.94);
+}
+
+
+/* =========================================================
+   DARK MODE SEARCH
+========================================================= */
+
+body.dark-mode .search-box {
+
+    background: #1f2937;
+
+    border-color: #374151;
+}
+
+
+body.dark-mode .search-box:focus-within {
+
+    background: #1f2937;
+
+    border-color: #60a5fa;
+
+    box-shadow:
+        0 0 0 3px rgba(96, 165, 250, 0.10);
+}
+
+
+body.dark-mode .search-box input {
+
+    color: #f9fafb;
+}
+
+
+body.dark-mode .search-box input::placeholder {
+
+    color: #6b7280;
+}
+
+
+body.dark-mode .search-box button {
+
+    background: #2563eb;
+}
+
+
+body.dark-mode .search-box button:hover {
+
+    background: #3b82f6;
+}
+
+
+/* =========================================================
+   QUICK ACCESS TITLE
+   ========================================================= */
+
+.quick-title {
+    margin-top: 25px;
+    margin-bottom: 11px;
+
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    color: #64748b;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.9px;
+}
+
+.quick-title::after {
+    content: "";
+
+    flex: 1;
+
+    height: 1px;
+
+    background: #e2e8f0;
+}
+
+
+
+/* =========================================================
+   RESULTS
+   ========================================================= */
+
+.results {
+    margin-top: 20px;
+}
+
+/* =========================================================
+   PROFESSIONAL LOCATION RESULT CARDS
+========================================================= */
+
+.location-card {
+
+    position: relative;
+
+    padding: 15px;
+
+    margin-bottom: 10px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 14px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease,
+        border-color 0.18s ease,
+        background 0.18s ease;
+
+}
+
+
+/* Hover */
+
+.location-card:hover {
+
+    transform: translateY(-2px);
+
+    border-color: #bfdbfe;
+
+    box-shadow:
+        0 7px 18px rgba(15, 23, 42, 0.08);
+
+}
+
+
+/* Click */
+
+.location-card:active {
+
+    transform: translateY(0);
+
+    box-shadow:
+        0 3px 8px rgba(15, 23, 42, 0.06);
+
+}
+
+
+/* Location title */
+
+.location-card h3 {
+
+    margin: 0 0 6px 0;
+
+    padding-right: 20px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    line-height: 1.3;
+
+    color: #111827;
+
+}
+
+
+/* Description */
+
+.location-card p {
+
+    margin: 0;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+    color: #6b7280;
+
+}
+
+
+/* Category */
+
+.location-category {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    margin-top: 10px;
+
+    padding: 4px 9px;
+
+    border-radius: 20px;
+
+    background: #f1f5f9;
+
+    color: #475569;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.3px;
+
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+
+
+
+body.dark-mode .location-card h3 {
+
+    color: #f9fafb;
+
+}
+
+
+body.dark-mode .location-card p {
+
+    color: #9ca3af;
+
+}
+
+
+body.dark-mode .location-category {
+
+    background: #374151;
+
+    color: #d1d5db;
+
+}
+
+/* =========================================================
+   WELCOME
+   ========================================================= */
+
+.welcome {
+    padding: 38px 18px;
+
+    text-align: center;
+
+    color: #64748b;
+}
+
+.welcome-icon {
+    width: 62px;
+    height: 62px;
+
+    margin: 0 auto 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(135deg,
+            #eff6ff,
+            #f8fafc);
+
+    box-shadow:
+        inset 0 0 0 1px #dbeafe;
+
+    font-size: 29px;
+}
+
+.welcome h3 {
+    margin-bottom: 7px;
+
+    color: #0f172a;
+
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.welcome p {
+    max-width: 250px;
+
+    margin: 0 auto;
+
+    color: #64748b;
+
+    font-size: 11px;
+
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   MAP CONTAINER
+   ========================================================= */
+
+.map-container {
+    position: relative;
+
+    flex: 1 1 auto;
+
+    min-width: 0;
+    min-height: 0;
+
+    height: 100%;
+
+    background: #e2e8f0;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+
+    min-height: 400px;
+}
+
+
+/* =========================================================
+   MAP INFO CARD
+   ========================================================= */
+
+.map-info {
+    position: absolute;
+
+    top: 18px;
+    right: 18px;
+
+    z-index: 1000;
+
+    max-width: 245px;
+
+    padding: 12px 15px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 3px;
+
+    background:
+        rgba(255, 255, 255, 0.94);
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+
+    border-radius: 13px;
+
+    box-shadow:
+        0 8px 28px rgba(15, 23, 42, 0.14);
+
+    backdrop-filter: blur(10px);
+}
+
+.map-info strong {
+    color: #0f172a;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.map-info span {
+    color: #64748b;
+
+    font-size: 10px;
+
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   LEAFLET CONTROLS
+   ========================================================= */
+
+.leaflet-control-zoom {
+    border: none !important;
+
+    box-shadow:
+        0 5px 16px rgba(15, 23, 42, 0.15) !important;
+}
+
+.leaflet-control-zoom a {
+    width: 34px !important;
+    height: 34px !important;
+
+    line-height: 34px !important;
+
+    border: none !important;
+
+    background: rgba(255, 255, 255, 0.96) !important;
+
+    color: #334155 !important;
+
+    font-weight: 600;
+
+    transition:
+        background 0.15s ease;
+}
+
+.leaflet-control-zoom a:hover {
+    background: #f1f5f9 !important;
+
+    color: #0f172a !important;
+}
+
+.leaflet-control-zoom-in {
+    border-radius: 9px 9px 0 0 !important;
+}
+
+.leaflet-control-zoom-out {
+    border-radius: 0 0 9px 9px !important;
+}
+
+
+/* =========================================================
+   LEAFLET ATTRIBUTION
+   ========================================================= */
+
+.leaflet-control-attribution {
+    padding: 4px 7px !important;
+
+    border-radius: 6px 0 0 0;
+
+    background: rgba(255, 255, 255, 0.82) !important;
+
+    color: #64748b !important;
+
+    font-size: 9px !important;
+}
+
+
+/* =========================================================
+   PROFESSIONAL LOCATION MARKERS
+   ========================================================= */
+
+.professional-location-icon {
+    background: transparent;
+    border: none;
+}
+
+.professional-marker {
+    width: 22px;
+    height: 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    background: var(--marker-color);
+
+    border: 2px solid white;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 2px 7px rgba(15, 23, 42, 0.35);
+
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+.professional-marker span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 11px;
+
+    line-height: 1;
+}
+
+.professional-marker:hover {
+    transform: scale(1.18);
+
+    box-shadow:
+        0 4px 11px rgba(15, 23, 42, 0.4);
+}
+
+
+/* =========================================================
+   PIN-STYLE MARKERS
+   ========================================================= */
+
+.custom-location-icon {
+    background: transparent;
+    border: none;
+}
+
+.location-marker {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--marker-color);
+
+    border: 3px solid white;
+
+    border-radius: 50% 50% 50% 0;
+
+    box-shadow:
+        0 4px 11px rgba(15, 23, 42, 0.3);
+
+    transform: rotate(-45deg);
+}
+
+.location-marker span {
+    transform: rotate(45deg);
+
+    font-size: 17px;
+
+    line-height: 1;
+}
+
+
+/* =========================================================
+   MARKER CLUSTERS
+   ========================================================= */
+
+.marker-cluster {
+    background:
+        rgba(37, 99, 235, 0.16);
+}
+
+.marker-cluster div {
+    width: 34px;
+    height: 34px;
+
+    line-height: 30px;
+
+    text-align: center;
+
+    border: 2px solid white;
+
+    border-radius: 50%;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    box-shadow:
+        0 3px 9px rgba(15, 23, 42, 0.25);
+}
+
+
+/* =========================================================
+   COORDINATE CAPTURE BOX
+   ========================================================= */
+
+.coordinate-box {
+    min-width: 190px;
+
+    padding: 12px 14px;
+
+    background:
+        rgba(255, 255, 255, 0.96);
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 5px 18px rgba(15, 23, 42, 0.15);
+
+    color: #475569;
+
+    font-size: 11px;
+}
+
+.coordinate-box strong {
+    color: #0f172a;
+}
+
+#clickedCoordinates {
+    margin-top: 6px;
+
+    color: #64748b;
+
+    line-height: 1.5;
+}
+
+.coordinate-box button {
+    margin-top: 6px;
+
+    padding: 5px 10px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background: #0f172a;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   ROUTE CAPTURE PANEL
+   ========================================================= */
+
+.route-capture-panel {
+    font-family:
+        Inter,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e1 transparent;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .sidebar {
+        flex: 0 0 320px;
+        width: 320px;
+
+        padding: 20px 16px;
+    }
+
+    .quick-access {
+        gap: 8px;
+    }
+
+    .quick-access-btn {
+        padding: 10px 8px;
+    }
+
+    .quick-access-btn>span {
+        width: 29px;
+        height: 29px;
+
+        font-size: 15px;
+    }
+
+    .quick-access-btn strong {
+        font-size: 11px;
+    }
+
+    .quick-access-btn small {
+        font-size: 8px;
+    }
+}
+
+@media (max-width: 430px) {
+
+    .quick-access {
+        grid-template-columns: 1fr;
+    }
+
+    .quick-access-btn {
+        padding: 11px;
+    }
+
+    .map-info {
+        display: none;
+    }
+}
+
+/* =========================================================
+   NIGHT MODE
+========================================================= */
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+
+/* =========================================================
+   THEME TOGGLE
+========================================================= */
+
+.theme-toggle {
+
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+
+    background: white;
+
+    color: #334155;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.18s ease,
+        border-color 0.18s ease,
+        transform 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+
+.theme-toggle:hover {
+
+    transform: translateY(-1px);
+
+    background: #f3f4f6;
+
+    border-color: #d1d5db;
+
+    box-shadow:
+        0 3px 8px rgba(15, 23, 42, 0.10);
+}
+
+
+.theme-toggle:active {
+
+    transform: translateY(0);
+
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   DARK THEME
+========================================================= */
+
+body.dark-mode {
+    background: #0f172a;
+    color: #e5e7eb;
+}
+
+
+/* Header */
+
+body.dark-mode .topbar {
+    background: #111827;
+    border-bottom-color: #1f2937;
+}
+
+body.dark-mode .brand h1 {
+    color: #f9fafb;
+}
+
+body.dark-mode .brand p {
+    color: #9ca3af;
+}
+
+body.dark-mode .status {
+    color: #d1d5db;
+}
+
+
+/* Sidebar */
+
+body.dark-mode .sidebar {
+    background: #111827;
+    border-right-color: #1f2937;
+}
+
+body.dark-mode .sidebar h2 {
+    color: #f9fafb;
+}
+
+body.dark-mode .quick-title {
+    color: #9ca3af;
+}
+
+
+/* Search */
+
+body.dark-mode .search-box {
+    border-color: #374151;
+}
+
+body.dark-mode .search-box input {
+    background: #1f2937;
+    color: #f9fafb;
+}
+
+body.dark-mode .search-box input::placeholder {
+    color: #9ca3af;
+}
+
+body.dark-mode .search-box button {
+    background: #2563eb;
+}
+
+
+/* Quick Access */
+
+body.dark-mode .quick-access-btn {
+    background: #1f2937;
+    border-color: #374151;
+}
+
+body.dark-mode .quick-access-btn:hover {
+    background: #273449;
+    border-color: #475569;
+}
+
+body.dark-mode .quick-access-btn strong {
+    color: #f9fafb;
+}
+
+body.dark-mode .quick-access-btn small {
+    color: #9ca3af;
+}
+
+
+/* Location cards */
+
+body.dark-mode .location-card:hover {
+    border-color: #6b7280;
+}
+
+body.dark-mode .location-card h3 {
+    color: #f9fafb;
+}
+
+body.dark-mode .location-card p {
+    color: #9ca3af;
+}
+
+body.dark-mode .location-category {
+    background: #374151;
+    color: #d1d5db;
+}
+
+
+/* Welcome */
+
+body.dark-mode .welcome {
+    color: #9ca3af;
+}
+
+body.dark-mode .welcome h3 {
+    color: #f9fafb;
+}
+
+
+/* Map information */
+
+body.dark-mode .map-info {
+    background: rgba(17, 24, 39, 0.96);
+    color: #f9fafb;
+}
+
+body.dark-mode .map-info span {
+    color: #9ca3af;
+}
+
+
+/* Theme button */
+
+body.dark-mode .theme-toggle {
+    background: #1f2937;
+    border-color: #374151;
+}
+
+body.dark-mode .theme-toggle:hover {
+    background: #273449;
+}
+
+
+
+/* =========================================================
+   PROFESSIONAL QUICK ACCESS
+========================================================= */
+
+.quick-access {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 10px;
+}
+
+
+.quick-access-btn {
+
+    min-height: 72px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 11px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 13px;
+
+    cursor: pointer;
+
+    text-align: left;
+
+    transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease,
+        border-color 0.18s ease,
+        background 0.18s ease;
+}
+
+
+.quick-access-btn:hover {
+
+    transform: translateY(-2px);
+
+    border-color: #bfdbfe;
+
+    box-shadow:
+        0 6px 16px rgba(15, 23, 42, 0.08);
+}
+
+
+.quick-access-btn:active {
+
+    transform: translateY(0);
+
+    box-shadow:
+        0 2px 7px rgba(15, 23, 42, 0.06);
+}
+
+/* =========================================================
+   QUICK ACCESS — INTERACTION POLISH
+========================================================= */
+
+.quick-access-btn:focus-visible {
+
+    outline: none;
+
+    border-color: #60a5fa;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.14),
+        0 6px 16px rgba(15, 23, 42, 0.08);
+}
+
+
+.quick-access-btn:active {
+
+    transform: translateY(0);
+
+    box-shadow:
+        0 2px 7px rgba(15, 23, 42, 0.06);
+}
+
+
+/* =========================================================
+   DARK MODE — INTERACTION POLISH
+========================================================= */
+
+body.dark-mode .quick-access-btn:hover {
+
+    background: #273449;
+
+    border-color: #475569;
+
+    box-shadow:
+        0 7px 18px rgba(0, 0, 0, 0.25);
+}
+
+
+body.dark-mode .quick-access-btn:focus-visible {
+
+    border-color: #60a5fa;
+
+    box-shadow:
+        0 0 0 3px rgba(96, 165, 250, 0.16),
+        0 7px 18px rgba(0, 0, 0, 0.25);
+}
+
+.quick-access-btn strong {
+
+    display: block;
+
+    font-size: 13px;
+
+    color: #111827;
+
+    line-height: 1.2;
+}
+
+
+.quick-access-btn small {
+
+    display: block;
+
+    margin-top: 4px;
+
+    font-size: 10px;
+
+    color: #6b7280;
+
+    line-height: 1.3;
+}
+
+
+/* =========================================================
+   DARK MODE QUICK ACCESS
+========================================================= */
+
+body.dark-mode .quick-access-btn {
+
+    background: #1f2937;
+
+    border-color: #374151;
+}
+
+
+body.dark-mode .quick-access-btn:hover {
+
+    background: #273449;
+
+    border-color: #475569;
+
+    box-shadow:
+        0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+
+body.dark-mode .quick-access-btn>span {
+
+    background: #374151;
+}
+
+
+body.dark-mode .quick-access-btn strong {
+
+    color: #f9fafb;
+}
+
+
+body.dark-mode .quick-access-btn small {
+
+    color: #9ca3af;
+}
+
+/* =========================================================
+   PROFESSIONAL ROUTE CARD
+========================================================= */
+
+.route-info {
+    margin: 0 0 18px 18px;
+}
+
+
+/* Main card */
+
+.route-card {
+
+    width: 285px;
+
+    padding: 16px;
+
+    background: rgba(255, 255, 255, 0.97);
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.14);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    backdrop-filter: blur(8px);
+
+    animation:
+        routeCardAppear 0.25s ease-out;
+}
+
+
+/* Header */
+
+.route-card-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding-bottom: 14px;
+
+    border-bottom:
+        1px solid #e5e7eb;
+}
+
+
+.route-card-title {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+}
+
+
+.route-icon {
+
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #eff6ff;
+
+    border-radius: 10px;
+
+    font-size: 19px;
+}
+
+
+.route-card-title strong {
+
+    display: block;
+
+    font-size: 15px;
+
+    color: #111827;
+
+}
+
+
+.route-card-title span {
+
+    display: block;
+
+    margin-top: 3px;
+
+    font-size: 11px;
+
+    color: #6b7280;
+
+}
+
+
+/* =========================================================
+   ROUTE STATS
+========================================================= */
+
+.route-stats {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+
+    margin-top: 14px;
+}
+
+
+.route-stat {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 10px;
+
+    background: #f9fafb;
+
+    border: 1px solid #f0f1f3;
+
+    border-radius: 11px;
+}
+
+
+.route-stat-icon {
+
+    font-size: 17px;
+
+    flex-shrink: 0;
+}
+
+
+.route-stat span {
+
+    display: block;
+
+    font-size: 10px;
+
+    color: #6b7280;
+
+}
+
+
+.route-stat strong {
+
+    display: block;
+
+    margin-top: 3px;
+
+    font-size: 14px;
+
+    color: #111827;
+
+}
+
+
+/* =========================================================
+   ROUTE STATUS
+========================================================= */
+
+.route-status {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    margin-top: 13px;
+
+    padding-top: 11px;
+
+    border-top:
+        1px solid #f0f1f3;
+
+    font-size: 10px;
+
+    color: #6b7280;
+}
+
+
+.route-status-dot {
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #22c55e;
+
+    box-shadow:
+        0 0 0 3px rgba(34, 197, 94, 0.12);
+}
+
+
+/* =========================================================
+   CARD ANIMATION
+========================================================= */
+
+@keyframes routeCardAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(8px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+body.dark-mode .route-card {
+
+    background: rgba(17, 24, 39, 0.97);
+
+    border-color: #374151;
+
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.35);
+}
+
+
+body.dark-mode .route-card-header {
+
+    border-bottom-color:
+        #374151;
+}
+
+
+body.dark-mode .route-card-title strong {
+
+    color: #f9fafb;
+}
+
+
+body.dark-mode .route-card-title span {
+
+    color: #9ca3af;
+}
+
+
+body.dark-mode .route-icon {
+
+    background: #1e3a5f;
+}
+
+
+body.dark-mode .route-stat {
+
+    background: #1f2937;
+
+    border-color: #374151;
+}
+
+
+body.dark-mode .route-stat span {
+
+    color: #9ca3af;
+}
+
+
+body.dark-mode .route-stat strong {
+
+    color: #f9fafb;
+}
+
+
+body.dark-mode .route-status {
+
+    border-top-color:
+        #374151;
+
+    color: #9ca3af;
+}
+
+
+
+/* =========================================================
+   LOCATION CARD CONTENT
+========================================================= */
+
+.location-card-main {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+}
+
+
+/* Category icon */
+
+.location-card-icon {
+
+    width: 38px;
+    height: 38px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #f1f5f9;
+
+    border-radius: 10px;
+
+    font-size: 19px;
+}
+
+
+/* Text area */
+
+.location-card-content {
+
+    flex: 1;
+
+    min-width: 0;
+}
+
+
+.location-card-content h3 {
+
+    margin: 0 0 4px 0;
+
+    padding: 0;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    color: #111827;
+
+    line-height: 1.3;
+
+}
+
+
+.location-card-content p {
+
+    margin: 0;
+
+    font-size: 11px;
+
+    color: #6b7280;
+
+    line-height: 1.4;
+
+}
+
+
+/* Arrow */
+
+.location-card-arrow {
+
+    flex-shrink: 0;
+
+    font-size: 20px;
+
+    color: #9ca3af;
+
+    transition:
+        transform 0.18s ease,
+        color 0.18s ease;
+}
+
+
+/* Hover arrow */
+
+.location-card:hover .location-card-arrow {
+
+    transform: translateX(3px);
+
+    color: #2563eb;
+}
+
+
+/* Category badge */
+
+.location-card .location-category {
+
+    margin-top: 11px;
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+body.dark-mode .location-card-icon {
+
+    background: #374151;
+}
+
+
+body.dark-mode .location-card-content h3 {
+
+    color: #f9fafb;
+}
+
+
+body.dark-mode .location-card-content p {
+
+    color: #9ca3af;
+}
+
+
+body.dark-mode .location-card-arrow {
+
+    color: #6b7280;
+}
+
+
+body.dark-mode .location-card:hover .location-card-arrow {
+
+    color: #60a5fa;
+}
+
+/* =========================================================
+   SIDEBAR PROFESSIONAL POLISH
+========================================================= */
+
+.sidebar {
+    padding: 22px;
+}
+
+.sidebar h2 {
+    margin-bottom: 14px;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.2px;
+}
+
+.quick-title {
+    margin-top: 22px;
+    margin-bottom: 11px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #94a3b8;
+}
+
+.results {
+    margin-top: 22px;
+}
+
+/* =========================================================
+   QUICK ACCESS — PREMIUM STYLE
+========================================================= */
+
+.quick-access {
+    gap: 10px;
+}
+
+.quick-access-btn {
+    position: relative;
+    min-height: 70px;
+    padding: 11px;
+    gap: 10px;
+
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 13px;
+
+    transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease,
+        border-color 0.18s ease,
+        background 0.18s ease;
+}
+
+.quick-access-btn:hover {
+    transform: translateY(-2px);
+
+    background: #fafcff;
+
+    border-color: #bfdbfe;
+
+    box-shadow:
+        0 7px 18px rgba(15, 23, 42, 0.08);
+}
+
+.quick-access-btn>span {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    background: #f1f5f9;
+
+    border-radius: 9px;
+
+    font-size: 18px;
+}
+
+.quick-access-btn strong {
+    font-size: 12.5px;
+}
+
+.quick-access-btn small {
+    font-size: 10px;
+    line-height: 1.3;
+}
+
+/* =========================================================
+   RESULTS SECTION
+========================================================= */
+
+.results {
+    padding-top: 2px;
+}
+
+.results:has(.location-card)::before {
+    content: "SEARCH RESULTS";
+
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    color: #94a3b8;
+}
+
+/* =========================================================
+   WELCOME / EMPTY STATE
+========================================================= */
+
+.welcome {
+    padding: 42px 18px 30px;
+}
+
+.welcome-icon {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 16px;
+
+    background: #eff6ff;
+
+    border-radius: 16px;
+
+    font-size: 29px;
+}
+
+.welcome h3 {
+    margin-bottom: 7px;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    color: #111827;
+}
+
+.welcome p {
+    max-width: 235px;
+
+    margin: 0 auto;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+
+    color: #6b7280;
+}
+
+/* =========================================================
+   DARK MODE SIDEBAR POLISH
+========================================================= */
+
+body.dark-mode .quick-access-btn {
+    background: #1f2937;
+    border-color: #374151;
+}
+
+body.dark-mode .quick-access-btn:hover {
+    background: #273449;
+    border-color: #475569;
+}
+
+body.dark-mode .quick-title,
+body.dark-mode .results:has(.location-card)::before {
+    color: #64748b;
+}
+
+body.dark-mode .welcome-icon {
+    background: #1e3a5f;
+}
+
+body.dark-mode .welcome h3 {
+    color: #f9fafb;
+}
+
+body.dark-mode .welcome p {
+    color: #9ca3af;
+}
+
+/* =========================================================
+   PROFESSIONAL MAP CONTROLS
+========================================================= */
+
+.professional-map-controls {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+
+    padding: 6px;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 6px 20px rgba(0, 0, 0, 0.14);
+
+    backdrop-filter: blur(8px);
+}
+
+
+/* =========================================================
+   PROFESSIONAL MAP CONTROL BUTTONS
+========================================================= */
+
+.map-control-btn {
+
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+
+    background: #ffffff;
+    color: #1e293b;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 22px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition:
+        background 0.18s ease,
+        color 0.18s ease,
+        transform 0.18s ease,
+        box-shadow 0.18s ease,
+        border-color 0.18s ease;
+}
+
+
+.map-control-btn:hover {
+
+    background: #f8fafc;
+
+    border-color: #cbd5e1;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 3px 8px rgba(15, 23, 42, 0.10);
+}
+
+
+.map-control-btn:active {
+
+    transform: translateY(0);
+
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+body.dark-mode .map-control-btn {
+
+    background: #1e293b;
+
+    border-color: #334155;
+
+    color: #f8fafc;
+}
+
+
+body.dark-mode .map-control-btn:hover {
+
+    background: #273449;
+
+    border-color: #475569;
+}
+
+/* Icons */
+
+.map-control-icon {
+
+    font-size: 17px;
+
+}
+
+
+/* Divider */
+
+.map-control-divider {
+
+    height: 1px;
+
+    margin: 1px 4px;
+
+    background: #e5e7eb;
+
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+body.dark-mode .professional-map-controls {
+
+    background: rgba(17, 24, 39, 0.96);
+
+    border-color: #374151;
+
+    box-shadow:
+        0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+
+body.dark-mode .map-control-btn {
+
+    background: #1f2937;
+
+    color: #f9fafb;
+
+}
+
+
+body.dark-mode .map-control-btn:hover {
+
+    background: #273449;
+
+    color: #60a5fa;
+
+}
+
+
+body.dark-mode .map-control-divider {
+
+    background: #374151;
+
+}
+
+/* =========================================================
+   MAP INFO CARD - FIX POSITION + DARK MODE
+========================================================= */
+
+.map-info {
+    /* Move MIET Campus card away from map controls */
+    top: 20px;
+    left: 20px;
+    right: auto;
+
+    min-width: 220px;
+    max-width: 240px;
+
+    padding: 13px 16px;
+
+    background: rgba(255, 255, 255, 0.97);
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 6px 20px rgba(0, 0, 0, 0.12);
+
+    backdrop-filter: blur(8px);
+
+    z-index: 900;
+}
+
+
+/* Title */
+
+.map-info strong {
+    display: block;
+
+    color: #111827;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    line-height: 1.3;
+}
+
+
+/* Description */
+
+.map-info span {
+    display: block;
+
+    margin-top: 4px;
+
+    color: #6b7280;
+
+    font-size: 11px;
+
+    line-height: 1.45;
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+body.dark-mode .map-info {
+    background: rgba(17, 24, 39, 0.97);
+
+    border-color: #374151;
+
+    box-shadow:
+        0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+
+body.dark-mode .map-info strong {
+    color: #f9fafb !important;
+}
+
+
+body.dark-mode .map-info span {
+    color: #cbd5e1 !important;
+}
+
+/* =========================================================
+   MAP INFO CARD — FINAL POSITION
+========================================================= */
+
+.map-info {
+
+    top: auto;
+    left: auto;
+
+    bottom: 30px;
+    right: 20px;
+
+    min-width: 220px;
+    max-width: 240px;
+
+    z-index: 900;
+}
+
+/* =========================================================
+   PROFESSIONAL LOCATION POPUP
+========================================================= */
+
+.location-popup {
+    width: 250px;
+    padding: 4px 2px 2px;
+}
+
+
+/* Icon */
+
+.location-popup-icon {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 10px;
+
+    background: #eff6ff;
+
+    border-radius: 12px;
+
+    font-size: 22px;
+}
+
+
+/* Location name */
+
+.location-popup-title {
+    margin-bottom: 5px;
+
+    color: #111827;
+
+    font-size: 17px;
+    font-weight: 700;
+
+    line-height: 1.25;
+}
+
+
+/* Description */
+
+.location-popup-description {
+    margin-bottom: 12px;
+
+    color: #6b7280;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+
+/* Building / Level information */
+
+.location-popup-detail {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    margin-top: 8px;
+    padding: 8px 9px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 9px;
+}
+
+
+.location-popup-detail>span {
+    width: 28px;
+    height: 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    background: #ffffff;
+
+    border-radius: 7px;
+
+    font-size: 14px;
+}
+
+
+.location-popup-detail div {
+    display: flex;
+    flex-direction: column;
+
+    gap: 2px;
+}
+
+
+.location-popup-detail small {
+    color: #94a3b8;
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.5px;
+}
+
+
+.location-popup-detail strong {
+    color: #374151;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   POPUP ACTION BUTTONS
+========================================================= */
+
+.location-popup-actions {
+    display: flex;
+
+    gap: 8px;
+
+    margin-top: 14px;
+}
+
+
+.location-popup-actions button {
+    flex: 1;
+
+    min-height: 38px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    color: white;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease,
+        opacity 0.15s ease;
+}
+
+
+.location-popup-actions button:hover {
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+
+.location-popup-actions button:active {
+    transform: scale(0.96);
+}
+
+
+.popup-locate-btn {
+    background: #111827;
+}
+
+
+.popup-navigate-btn {
+    background: #2563eb;
+}
+
+
+.popup-locate-btn:hover {
+    background: #1f2937;
+}
+
+
+.popup-navigate-btn:hover {
+    background: #1d4ed8;
+}
+
+
+/* =========================================================
+   LEAFLET POPUP POLISH
+========================================================= */
+
+.leaflet-popup-content-wrapper {
+    border-radius: 15px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.18);
+}
+
+.leaflet-popup-content-wrapper {
+
+    background: #ffffff;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.18);
+}
+
+.leaflet-popup-content {
+    margin: 15px 17px;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+}
+
+
+.leaflet-popup-tip {
+    box-shadow:
+        2px 2px 5px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================================================
+   POPUP CLOSE BUTTON — FINAL POSITION
+========================================================= */
+
+.leaflet-popup-close-button {
+    color: #6b7280 !important;
+
+    font-size: 20px !important;
+    font-weight: 400 !important;
+
+    padding: 10px 12px !important;
+
+    top: 0px !important;
+    right: 18px !important;
+
+    line-height: 20px !important;
+}
+
+.leaflet-popup-close-button:hover {
+    color: #111827 !important;
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+body.dark-mode .leaflet-popup-close-button {
+    color: #9ca3af !important;
+}
+
+body.dark-mode .leaflet-popup-close-button:hover {
+    color: #ffffff !important;
+}
+
+.leaflet-popup-close-button:hover {
+    color: #111827 !important;
+}
+
+
+/* Dark mode */
+
+body.dark-mode .leaflet-popup-close-button {
+    color: #9ca3af !important;
+}
+
+
+body.dark-mode .leaflet-popup-close-button:hover {
+    color: #ffffff !important;
+}
+
+.leaflet-popup-close-button:hover {
+    color: #111827 !important;
+}
+
+
+/* =========================================================
+   DARK MODE LOCATION POPUP
+========================================================= */
+
+body.dark-mode .leaflet-popup-content-wrapper {
+    background: #111827;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+
+body.dark-mode .leaflet-popup-tip {
+    background: #111827;
+}
+
+
+body.dark-mode .location-popup-icon {
+    background: #1e3a5f;
+}
+
+
+body.dark-mode .location-popup-title {
+    color: #f9fafb;
+}
+
+
+body.dark-mode .location-popup-description {
+    color: #9ca3af;
+}
+
+
+body.dark-mode .location-popup-detail {
+    background: #1f2937;
+
+    border-color: #374151;
+}
+
+
+body.dark-mode .location-popup-detail>span {
+    background: #374151;
+}
+
+
+body.dark-mode .location-popup-detail small {
+    color: #64748b;
+}
+
+
+body.dark-mode .location-popup-detail strong {
+    color: #e5e7eb;
+}
+
+
+body.dark-mode .leaflet-popup-close-button {
+    color: #9ca3af !important;
+}
+
+
+body.dark-mode .leaflet-popup-close-button:hover {
+    color: #ffffff !important;
+}
+
+/* =========================================================
+   ROUTE ENDPOINT MARKERS
+========================================================= */
+
+.route-endpoint-icon {
+    background: transparent !important;
+    border: none !important;
+}
+
+
+.route-start-marker,
+.route-destination-marker {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 5px;
+
+    height: 40px;
+
+    padding: 5px 9px;
+
+    background: white;
+
+    border: 2px solid #2563eb;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.25);
+
+    white-space: nowrap;
+}
+
+
+.route-start-marker span {
+    color: #16a34a;
+
+    font-size: 17px;
+
+    line-height: 1;
+}
+
+
+.route-destination-marker span {
+    color: #dc2626;
+
+    font-size: 17px;
+
+    line-height: 1;
+}
+
+
+.route-start-marker small,
+.route-destination-marker small {
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+
+    color: #111827;
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+body.dark-mode .route-start-marker,
+body.dark-mode .route-destination-marker {
+    background: #111827;
+
+    border-color: #3b82f6;
+
+    box-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.45);
+}
+
+
+body.dark-mode .route-start-marker small,
+body.dark-mode .route-destination-marker small {
+    color: #f9fafb;
+}
+
+/* =========================================================
+   COMPACT ROUTE ENDPOINT MARKERS
+========================================================= */
+
+.route-start-marker,
+.route-destination-marker {
+    height: 32px;
+
+    padding: 4px 8px;
+
+    gap: 4px;
+
+    border-radius: 16px;
+
+    border-width: 1.5px;
+
+    box-shadow:
+        0 2px 7px rgba(0, 0, 0, 0.25);
+}
+
+
+.route-start-marker span,
+.route-destination-marker span {
+    font-size: 13px;
+}
+
+
+.route-start-marker small,
+.route-destination-marker small {
+    font-size: 9px;
+
+    letter-spacing: 0.3px;
+}
+
+/* =========================================================
+   ROUTE INFORMATION CARD — LIGHT / DARK THEME
+========================================================= */
+
+.route-info>div {
+    padding: 14px 16px !important;
+
+    min-width: 270px !important;
+
+    border-radius: 14px !important;
+
+    /* DAY THEME */
+    background: rgba(255, 255, 255, 0.97) !important;
+
+    border: 1px solid #e5e7eb;
+
+    box-shadow:
+        0 8px 24px rgba(0, 0, 0, 0.14);
+}
+
+
+/* Main heading */
+
+.route-info>div>strong {
+    color: #111827 !important;
+}
+
+
+/* Normal text */
+
+.route-info>div>div {
+    color: #374151 !important;
+}
+
+
+/* Distance / walking-time values */
+
+.route-info>div>div strong {
+    color: #111827 !important;
+
+    font-size: 14px;
+}
+
+
+/* Success message */
+
+.route-info>div>div:last-child {
+    color: #166534 !important;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   DARK THEME
+========================================================= */
+
+body.dark-mode .route-info>div {
+    background: rgba(17, 24, 39, 0.97) !important;
+
+    border-color: #263449;
+
+    box-shadow:
+        0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+
+body.dark-mode .route-info>div>strong {
+    color: #f9fafb !important;
+}
+
+
+body.dark-mode .route-info>div>div {
+    color: #d1d5db !important;
+}
+
+
+body.dark-mode .route-info>div>div strong {
+    color: #f9fafb !important;
+}
+
+
+body.dark-mode .route-info>div>div:last-child {
+    color: #86efac !important;
+}
+
+/* =========================================================
+   NAVIGATION POPUP
+========================================================= */
+
+.navigation-popup {
+
+    width: 270px;
+
+    padding: 2px 1px 1px;
+
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.navigation-popup-header {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.navigation-popup-icon {
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    background: #eff6ff;
+
+    border-radius: 12px;
+
+    font-size: 21px;
+
+}
+
+
+.navigation-popup-title {
+
+    color: #111827;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+}
+
+
+.navigation-popup-subtitle {
+
+    margin-top: 3px;
+
+    color: #6b7280;
+
+    font-size: 10px;
+
+}
+
+
+/* =========================================================
+   DESTINATION
+========================================================= */
+
+.navigation-destination {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 10px;
+
+    margin-bottom: 14px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 10px;
+
+}
+
+
+.navigation-destination-icon {
+
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    background: #fee2e2;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+
+}
+
+
+.navigation-destination div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+
+    min-width: 0;
+
+}
+
+
+.navigation-destination small {
+
+    color: #94a3b8;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.6px;
+
+}
+
+
+.navigation-destination strong {
+
+    color: #374151;
+
+    font-size: 12px;
+
+    line-height: 1.3;
+
+}
+
+
+/* =========================================================
+   STARTING POINT
+========================================================= */
+
+.navigation-label {
+
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #374151;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+}
+
+
+.navigation-select {
+
+    width: 100%;
+
+    height: 39px;
+
+    padding: 0 10px;
+
+    margin-bottom: 13px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 9px;
+
+    outline: none;
+
+    background: white;
+
+    color: #374151;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 11px;
+
+    cursor: pointer;
+
+}
+
+
+.navigation-select:focus {
+
+    border-color: #60a5fa;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.1);
+
+}
+
+
+/* =========================================================
+   START NAVIGATION BUTTON
+========================================================= */
+
+.navigation-start-button {
+
+    width: 100%;
+
+    height: 40px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.18s ease,
+        transform 0.15s ease,
+        box-shadow 0.18s ease;
+
+}
+
+
+.navigation-start-button:hover {
+
+    background: #1d4ed8;
+
+    box-shadow:
+        0 5px 12px rgba(37, 99, 235, 0.25);
+
+    transform: translateY(-1px);
+
+}
+
+
+.navigation-start-button:active {
+
+    transform: scale(0.97);
+
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+body.dark-mode .navigation-popup-icon {
+
+    background: #1e3a5f;
+
+}
+
+
+body.dark-mode .navigation-popup-title {
+
+    color: #f9fafb;
+
+}
+
+
+body.dark-mode .navigation-popup-subtitle {
+
+    color: #9ca3af;
+
+}
+
+
+body.dark-mode .navigation-destination {
+
+    background: #1f2937;
+
+    border-color: #374151;
+
+}
+
+
+body.dark-mode .navigation-destination-icon {
+
+    background: #3f2020;
+
+}
+
+
+body.dark-mode .navigation-destination small {
+
+    color: #64748b;
+
+}
+
+
+body.dark-mode .navigation-destination strong {
+
+    color: #e5e7eb;
+
+}
+
+
+body.dark-mode .navigation-label {
+
+    color: #d1d5db;
+
+}
+
+
+body.dark-mode .navigation-select {
+
+    background: #1f2937;
+
+    border-color: #374151;
+
+    color: #f9fafb;
+
+}
+
+
+body.dark-mode .navigation-select option {
+
+    background: #1f2937;
+
+    color: #f9fafb;
+
+}
+
+/* =========================================================
+   NAVIGATION STATE
+========================================================= */
+
+.route-destination-name {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #2563eb !important;
+
+    font-size: 12px !important;
+
+    line-height: 1.35;
+}
+
+
+/* =========================================================
+   ROUTE JOURNEY
+========================================================= */
+
+.route-journey {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    margin-top: 13px;
+
+    padding: 9px 10px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 9px;
+
+    font-size: 10px;
+
+}
+
+
+.route-journey-point {
+
+    flex: 1;
+
+    color: #374151;
+
+    font-weight: 600;
+
+    line-height: 1.3;
+}
+
+
+.route-journey-arrow {
+
+    flex-shrink: 0;
+
+    color: #2563eb;
+
+    font-size: 15px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+body.dark-mode .route-destination-name {
+    color: #60a5fa !important;
+}
+
+
+body.dark-mode .route-journey {
+
+    background: #1f2937;
+
+    border-color: #374151;
+}
+
+
+body.dark-mode .route-journey-point {
+
+    color: #e5e7eb;
+}
+
+
+body.dark-mode .route-journey-arrow {
+
+    color: #60a5fa;
+}
+
+/* =========================================================
+   MAP CONTROLS — PROFESSIONAL POLISH
+========================================================= */
+
+.professional-map-controls {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+
+    padding: 7px;
+
+    background: rgba(255, 255, 255, 0.94);
+
+    border: 1px solid rgba(226, 232, 240, 0.95);
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 6px 20px rgba(15, 23, 42, 0.18);
+
+    backdrop-filter: blur(8px);
+
+    -webkit-backdrop-filter: blur(8px);
+}
+
+
+/* =========================================================
+   CONTROL BUTTON
+========================================================= */
+
+
+
+/* =========================================================
+   ICON BUTTONS
+========================================================= */
+
+.map-control-icon {
+
+    font-size: 17px;
+
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.map-control-btn:hover {
+
+    background: #f1f5f9;
+
+    border-color: #cbd5e1;
+
+    box-shadow:
+        0 3px 8px rgba(15, 23, 42, 0.12);
+
+    transform: translateY(-1px);
+
+}
+
+
+/* =========================================================
+   ACTIVE / PRESS
+========================================================= */
+
+.map-control-btn:active {
+
+    transform: scale(0.94);
+
+    box-shadow: none;
+
+}
+
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+
+.map-control-divider {
+
+    width: 100%;
+
+    height: 1px;
+
+    background: #e2e8f0;
+
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+body.dark-mode .professional-map-controls {
+
+    background: rgba(15, 23, 42, 0.94);
+
+    border-color: #334155;
+
+    box-shadow:
+        0 7px 22px rgba(0, 0, 0, 0.4);
+}
+
+
+body.dark-mode .map-control-btn:hover {
+
+    background: #334155;
+
+    border-color: #475569;
+}
+
+
+body.dark-mode .map-control-divider {
+
+    background: #334155;
+}
+
+/* =========================================================
+   SEARCH EXPERIENCE — POLISH
+========================================================= */
+
+.search-box {
+    border: 1px solid #dbe2ea;
+
+    border-radius: 14px;
+
+    background: #f8fafc;
+
+    box-shadow:
+        0 2px 6px rgba(15, 23, 42, 0.04);
+
+    transition:
+        border-color 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+
+.search-box:focus-within {
+    border-color: #60a5fa;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.10);
+}
+
+
+.search-box input {
+    background: transparent;
+
+    padding: 14px 15px;
+
+    color: #111827;
+}
+
+
+.search-box input::placeholder {
+    color: #94a3b8;
+}
+
+
+.search-box button {
+    width: 52px;
+
+    border-radius: 0 13px 13px 0;
+
+    background: #111827;
+
+    transition:
+        background 0.15s ease,
+        transform 0.12s ease;
+}
+
+
+.search-box button:hover {
+    background: #1e293b;
+}
+
+
+.search-box button:active {
+    transform: scale(0.96);
+}
+
+
+/* =========================================================
+   SEARCH RESULTS
+========================================================= */
+
+
+
+.location-card-main {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+.location-card-icon {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    background: #f1f5f9;
+
+    border-radius: 10px;
+
+    font-size: 19px;
+}
+
+
+.location-card-content {
+    min-width: 0;
+
+    flex: 1;
+}
+
+
+.location-card-content h3 {
+    margin: 0 0 3px;
+
+    color: #111827;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+
+.location-card-content p {
+    margin: 0;
+
+    color: #64748b;
+
+    font-size: 11px;
+
+    line-height: 1.4;
+
+    display: -webkit-box;
+
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+
+    -webkit-box-orient: vertical;
+
+    overflow: hidden;
+}
+
+
+.location-card-arrow {
+    width: 28px;
+    height: 28px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 8px;
+
+    background: #f8fafc;
+
+    color: #64748b;
+
+    font-size: 17px;
+
+    transition:
+        background 0.15s ease,
+        color 0.15s ease,
+        transform 0.15s ease;
+}
+
+
+.location-card:hover .location-card-arrow {
+    background: #eff6ff;
+
+    color: #2563eb;
+
+    transform: translateX(2px);
+}
+
+
+/* =========================================================
+   CATEGORY BADGE
+========================================================= */
+
+.location-category {
+    display: inline-flex;
+
+    align-items: center;
+
+    margin-top: 9px;
+
+    padding: 4px 8px;
+
+    border-radius: 20px;
+
+    background: #f1f5f9;
+
+    color: #64748b;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.4px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+body.dark-mode .search-box {
+    background: #111827;
+
+    border-color: #374151;
+}
+
+
+body.dark-mode .search-box input {
+    color: #f9fafb;
+}
+
+
+body.dark-mode .search-box input::placeholder {
+    color: #6b7280;
+}
+
+
+body.dark-mode .search-box button {
+    background: #2563eb;
+}
+
+
+body.dark-mode .search-box button:hover {
+    background: #1d4ed8;
+}
+
+
+
+body.dark-mode .location-card:hover {
+    border-color: #3b82f6;
+
+    box-shadow:
+        0 5px 14px rgba(0, 0, 0, 0.25);
+}
+
+
+body.dark-mode .location-card-icon {
+    background: #1f2937;
+}
+
+
+body.dark-mode .location-card-content h3 {
+    color: #f9fafb;
+}
+
+
+body.dark-mode .location-card-content p {
+    color: #9ca3af;
+}
+
+
+body.dark-mode .location-card-arrow {
+    background: #1f2937;
+
+    color: #9ca3af;
+}
+
+
+body.dark-mode .location-card:hover .location-card-arrow {
+    background: #1e3a5f;
+
+    color: #60a5fa;
+}
+
+
+body.dark-mode .location-category {
+    background: #1f2937;
+
+    color: #9ca3af;
+}
+
+/* =========================================================
+   MOBILE UI — CONSOLIDATED
+========================================================= */
+
+@media (max-width: 700px) {
+
+    /* -----------------------------------------------------
+       PAGE
+    ----------------------------------------------------- */
+
+    body {
+        overflow: auto;
+    }
+
+
+    /* -----------------------------------------------------
+       TOP BAR
+    ----------------------------------------------------- */
+
+    .topbar {
+        height: 64px;
+
+        padding: 0 15px;
+    }
+
+
+    .brand-icon {
+        width: 38px;
+        height: 38px;
+
+        border-radius: 10px;
+
+        font-size: 18px;
+    }
+
+
+    .brand h1 {
+        font-size: 15px;
+    }
+
+
+    .brand p {
+        font-size: 9px;
+    }
+
+
+    .status {
+        display: none;
+    }
+
+
+    .header-actions {
+        gap: 8px;
+    }
+
+
+    .theme-toggle {
+        width: 38px;
+        height: 38px;
+    }
+
+
+    /* -----------------------------------------------------
+       MAIN APPLICATION
+    ----------------------------------------------------- */
+
+    .app {
+        height: auto;
+
+        min-height: calc(100vh - 64px);
+
+        flex-direction: column;
+
+        overflow: visible;
+    }
+
+
+    /* -----------------------------------------------------
+       SIDEBAR
+    ----------------------------------------------------- */
+
+    .sidebar {
+        width: 100%;
+
+        height: auto;
+
+        flex: none;
+
+        padding: 18px 15px;
+
+        border-right: none;
+
+        border-bottom: 1px solid #e2e8f0;
+    }
+
+
+    .sidebar h2 {
+        font-size: 18px;
+    }
+
+
+    /* -----------------------------------------------------
+       QUICK ACCESS
+    ----------------------------------------------------- */
+
+    .quick-access {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+
+    /* -----------------------------------------------------
+       MAP
+    ----------------------------------------------------- */
+
+    .map-container {
+        width: 100%;
+
+        height: 65vh;
+
+        min-height: 420px;
+
+        flex: none;
+    }
+
+
+    #map {
+        width: 100%;
+
+        height: 100%;
+    }
+
+
+    /* -----------------------------------------------------
+       MIET CAMPUS INFO
+    ----------------------------------------------------- */
+
+    .map-info {
+        top: auto;
+
+        left: auto;
+
+        bottom: 15px;
+
+        right: 15px;
+
+        min-width: 190px;
+
+        max-width: 210px;
+
+        padding: 11px 13px;
+    }
+
+
+    /* -----------------------------------------------------
+       ROUTE INFORMATION
+    ----------------------------------------------------- */
+
+    .route-info {
+        margin:
+            0 0 12px 12px;
+    }
+
+
+    .route-card {
+        width: 255px;
+
+        padding: 14px;
+
+        border-radius: 14px;
+    }
+
+
+    .route-stats {
+        gap: 7px;
+    }
+
+
+    /* -----------------------------------------------------
+       MAP CONTROLS
+    ----------------------------------------------------- */
+
+    .professional-map-controls {
+        gap: 6px;
+
+        padding: 6px;
+
+        border-radius: 14px;
+    }
+
+
+    .map-control-btn {
+        width: 42px;
+
+        height: 42px;
+
+        border-radius: 10px;
+
+        font-size: 21px;
+    }
+
+
+    .map-control-icon {
+        font-size: 17px;
+    }
+
+
+    /* -----------------------------------------------------
+       LEAFLET ZOOM CONTROL
+    ----------------------------------------------------- */
+
+    .leaflet-control-zoom {
+        margin-left: 10px !important;
+
+        margin-bottom: 10px !important;
+    }
+
+}
+
+/* =========================================================
+   APP NOTIFICATIONS
+========================================================= */
+
+.app-notification {
+
+    position: fixed;
+
+    top: 88px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: 10000;
+
+    width: min(390px, calc(100vw - 30px));
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    padding: 12px 13px;
+
+    background: rgba(255, 255, 255, 0.97);
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 13px;
+
+    box-shadow:
+        0 8px 25px rgba(15, 23, 42, 0.18);
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    animation:
+        notification-in 0.2s ease;
+}
+
+
+.app-notification-icon {
+
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 9px;
+
+    background: #fef3c7;
+
+    font-size: 16px;
+}
+
+
+.app-notification-content {
+
+    flex: 1;
+
+    color: #374151;
+
+    font-size: 12px;
+
+    line-height: 1.4;
+
+    font-weight: 500;
+}
+
+
+.app-notification-close {
+
+    width: 25px;
+    height: 25px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    padding: 0;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: transparent;
+
+    color: #94a3b8;
+
+    font-size: 19px;
+
+    line-height: 1;
+
+    cursor: pointer;
+}
+
+
+.app-notification-close:hover {
+
+    background: #f1f5f9;
+
+    color: #334155;
+}
+
+
+/* =========================================================
+   ERROR STATE
+========================================================= */
+
+.app-notification.error {
+
+    border-color: #fecaca;
+}
+
+
+.app-notification.error .app-notification-icon {
+
+    background: #fee2e2;
+}
+
+
+/* =========================================================
+   ANIMATION
+========================================================= */
+
+@keyframes notification-in {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translate(-50%, -8px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translate(-50%, 0);
+
+    }
+
+}
+
+
+.app-notification-hide {
+
+    opacity: 0;
+
+    transform:
+        translate(-50%, -8px);
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+body.dark-mode .app-notification {
+
+    background: rgba(17, 24, 39, 0.97);
+
+    border-color: #374151;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+
+body.dark-mode .app-notification-icon {
+
+    background: #3f3518;
+}
+
+
+body.dark-mode .app-notification-content {
+
+    color: #e5e7eb;
+}
+
+
+body.dark-mode .app-notification-close {
+
+    color: #9ca3af;
+}
+
+
+body.dark-mode .app-notification-close:hover {
+
+    background: #1f2937;
+
+    color: #f9fafb;
+}
+
+
+body.dark-mode .app-notification.error {
+
+    border-color: #7f1d1d;
+}
+
+
+body.dark-mode .app-notification.error .app-notification-icon {
+
+    background: #3f2020;
+}
+
+/* =========================================================
+   LOADING NOTIFICATION
+========================================================= */
+
+.app-notification.loading {
+
+    border-color: #bfdbfe;
+}
+
+
+.app-notification.loading .app-notification-icon {
+
+    background: #dbeafe;
+
+    animation:
+        notification-loading 1.2s ease-in-out infinite;
+}
+
+
+.app-notification.loading .app-notification-content {
+
+    color: #1e3a8a;
+}
+
+
+/* =========================================================
+   DARK MODE — LOADING
+========================================================= */
+
+body.dark-mode .app-notification.loading {
+
+    background: rgba(17, 24, 39, 0.97);
+
+    border-color: #374151;
+}
+
+
+body.dark-mode .app-notification.loading .app-notification-icon {
+
+    background: #1e3a5f;
+}
+
+
+body.dark-mode .app-notification.loading .app-notification-content {
+
+    color: #dbeafe;
+}
+
+
+/* =========================================================
+   LOADING ANIMATION
+========================================================= */
+
+@keyframes notification-loading {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .app-notification {
+
+        top: 76px;
+
+        width: calc(100vw - 24px);
+
+        padding: 11px 12px;
+
+        border-radius: 12px;
+    }
+
+}
+
+/* =========================================================
+   DARK MODE — SEARCH RESULT TEXT
+========================================================= */
+
+body.dark-mode .location-card h3 {
+    color: #f9fafb !important;
+}
+
+body.dark-mode .location-card p {
+    color: #cbd5e1 !important;
+}
+
+body.dark-mode .location-category {
+    background: #374151 !important;
+    color: #e5e7eb !important;
+}
+
+/* =========================================================
+   FINAL DARK MODE — LOCATION CARDS
+========================================================= */
+
+body.dark-mode .location-card {
+    background: #1f2937 !important;
+    border-color: #374151 !important;
+}
+
+body.dark-mode .location-card:hover {
+    background: #273449 !important;
+    border-color: #475569 !important;
+}
+
+body.dark-mode .location-card h3 {
+    color: #f9fafb !important;
+}
+
+body.dark-mode .location-card p {
+    color: #cbd5e1 !important;
+}
+
+body.dark-mode .location-category {
+    background: #374151 !important;
+    color: #e5e7eb !important;
+}
+/* =========================================================
+   MIET CAMPUS STATUS — NIGHT MODE FIX
+   Professional header status pill
+========================================================= */
+
+body.dark-mode .campus-status,
+body.dark-mode .campus-status-pill,
+body.dark-mode .header-status,
+body.dark-mode .status-pill,
+body.dark-mode .campus-indicator,
+body.dark-mode .campus-badge {
+
+    background: rgba(30, 41, 59, 0.92) !important;
+
+    color: #cbd5e1 !important;
+
+    border: 1px solid
+        rgba(148, 163, 184, 0.20) !important;
+
+    box-shadow:
+        0 4px 14px
+        rgba(0, 0, 0, 0.22) !important;
+
+    backdrop-filter: blur(10px);
+
+    -webkit-backdrop-filter: blur(10px);
+}
+
+
+/* Text inside the status */
+
+body.dark-mode .campus-status *,
+body.dark-mode .campus-status-pill *,
+body.dark-mode .header-status *,
+body.dark-mode .status-pill *,
+body.dark-mode .campus-indicator *,
+body.dark-mode .campus-badge * {
+
+    color: #cbd5e1 !important;
+}
+
+
+/* Green online/status dot */
+body.dark-mode .status .status-dot {
+
+    background: #22c55e !important;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(34, 197, 94, 0.12) !important;
+}
+
+
+/* Hover */
+
+body.dark-mode .campus-status:hover,
+body.dark-mode .campus-status-pill:hover,
+body.dark-mode .header-status:hover,
+body.dark-mode .status-pill:hover,
+body.dark-mode .campus-indicator:hover,
+body.dark-mode .campus-badge:hover {
+
+    background:
+        rgba(37, 50, 71, 0.96) !important;
+
+    border-color:
+        rgba(96, 165, 250, 0.28) !important;
+
+    color: #f1f5f9 !important;
+
+    box-shadow:
+        0 6px 18px
+        rgba(0, 0, 0, 0.30) !important;
+}
+/* =========================================================
+   TOP-RIGHT "MIET CAMPUS" STATUS PILL
+   NIGHT MODE
+========================================================= */
+
+/* Catch the actual top-right campus status element */
+body.dark-mode [class*="status"],
+body.dark-mode [class*="campus"],
+body.dark-mode [class*="Campus"] {
+    color: #dbeafe;
+}
+
+
+/* Dark header status pill */
+body.dark-mode header [class*="status"],
+body.dark-mode header [class*="campus"],
+body.dark-mode header [class*="Campus"] {
+    background: #1e293b !important;
+
+    color: #e2e8f0 !important;
+
+    border: 1px solid
+        rgba(148, 163, 184, 0.22) !important;
+
+    box-shadow:
+        0 4px 14px
+        rgba(0, 0, 0, 0.28) !important;
+}
+
+
+/* Make text inside it light */
+body.dark-mode header [class*="status"] *,
+body.dark-mode header [class*="campus"] *,
+body.dark-mode header [class*="Campus"] * {
+    color: #e2e8f0 !important;
+}
+/* MIET Campus status dot */
+body.dark-mode .miet-campus-status::before {
+    background: #4ade80 !important;
+
+    box-shadow:
+        0 0 0 3px rgba(74, 222, 128, 0.12),
+        0 0 8px rgba(74, 222, 128, 0.35) !important;
+}
+/* Top-right MIET Campus indicator dot */
+body.dark-mode [class*="status"]::before {
+    background: #4ade80 !important;
+
+    box-shadow:
+        0 0 0 3px rgba(74, 222, 128, 0.12),
+        0 0 8px rgba(74, 222, 128, 0.35) !important;
+}
+/* =========================================================
+   MIET CAMPUS — PROFESSIONAL STATUS DOT
+========================================================= */
+
+.miet-campus-dot-professional {
+    background: #22c55e !important;
+    border-color: #22c55e !important;
+
+    box-shadow:
+        0 0 0 3px rgba(34, 197, 94, 0.12),
+        0 0 7px rgba(34, 197, 94, 0.35) !important;
+}
+
+
+/* If the indicator is a pseudo-element */
+.miet-campus-pill-professional::before {
+    background: #22c55e !important;
+    border-color: #22c55e !important;
+
+    box-shadow:
+        0 0 0 3px rgba(34, 197, 94, 0.12),
+        0 0 7px rgba(34, 197, 94, 0.35) !important;
+}
+/* =========================================================
+   FINAL MOBILE UI — SMART CAMPUS
+   MOBILE ONLY — DOES NOT TOUCH ROUTING LOGIC
+========================================================= */
+
+@media (max-width: 700px) {
+
+    /* -----------------------------------------------------
+       PAGE / MAIN LAYOUT
+    ----------------------------------------------------- */
+
+    body {
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+    }
+
+    .app {
+        min-height: calc(100vh - 64px);
+        overflow: visible !important;
+    }
+
+
+    /* -----------------------------------------------------
+       SIDEBAR / TOP CONTENT
+    ----------------------------------------------------- */
+
+    .sidebar {
+        padding: 12px 14px 14px !important;
+    }
+
+    .sidebar h2 {
+        margin-bottom: 10px !important;
+        font-size: 17px !important;
+    }
+
+    .search-box input {
+        height: 44px !important;
+        padding: 0 12px !important;
+        font-size: 13px !important;
+    }
+
+    .search-box button {
+        width: 44px !important;
+        height: 44px !important;
+    }
+
+    .quick-title {
+        margin-top: 15px !important;
+        margin-bottom: 8px !important;
+    }
+
+    .quick-access {
+        gap: 8px !important;
+    }
+
+    .quick-access-btn {
+        min-height: 62px !important;
+        padding: 9px !important;
+    }
+
+    .quick-access-btn > span {
+        width: 31px !important;
+        height: 31px !important;
+        font-size: 16px !important;
+    }
+
+    .quick-access-btn strong {
+        font-size: 12px !important;
+    }
+
+    .quick-access-btn small {
+        font-size: 9px !important;
+    }
+
+
+    /* -----------------------------------------------------
+       WELCOME — REMOVE EXCESSIVE EMPTY SPACE
+    ----------------------------------------------------- */
+
+    .welcome {
+        padding: 24px 14px 20px !important;
+    }
+
+    .welcome-icon {
+        width: 52px !important;
+        height: 52px !important;
+        margin-bottom: 11px !important;
+        font-size: 25px !important;
+    }
+
+    .welcome h3 {
+        margin-bottom: 5px !important;
+        font-size: 16px !important;
+    }
+
+    .welcome p {
+        max-width: 270px !important;
+        font-size: 11px !important;
+        line-height: 1.5 !important;
+    }
+
+
+    /* -----------------------------------------------------
+       MAP
+    ----------------------------------------------------- */
+
+    .map-container {
+        height: 72vh !important;
+        min-height: 460px !important;
+    }
+
+    #map {
+        height: 100% !important;
+    }
+
+
+    /* -----------------------------------------------------
+       ROUTE INFORMATION
+    ----------------------------------------------------- */
+
+    .route-info {
+        width: calc(100vw - 24px) !important;
+        max-width: 420px !important;
+        margin: 0 0 10px 10px !important;
+    }
+
+    .route-info > div {
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+
+        padding: 13px !important;
+        border-radius: 14px !important;
+    }
+
+    .route-card {
+        width: 100% !important;
+        max-width: 420px !important;
+        padding: 13px !important;
+        border-radius: 14px !important;
+    }
+
+
+    /* -----------------------------------------------------
+       ROUTE HEADER
+    ----------------------------------------------------- */
+
+    .route-card-header {
+        padding-bottom: 11px !important;
+    }
+
+    .route-card-title {
+        gap: 8px !important;
+        min-width: 0 !important;
+    }
+
+    .route-icon {
+        width: 34px !important;
+        height: 34px !important;
+        font-size: 17px !important;
+        flex-shrink: 0 !important;
+    }
+
+    .route-card-title strong {
+        font-size: 14px !important;
+    }
+
+    .route-card-title span {
+        font-size: 10px !important;
+    }
+
+
+    /* -----------------------------------------------------
+       ROUTE JOURNEY
+    ----------------------------------------------------- */
+
+    .route-journey {
+        gap: 6px !important;
+        padding: 8px !important;
+        margin-top: 10px !important;
+        font-size: 10px !important;
+    }
+
+    .route-journey-point {
+        min-width: 0 !important;
+        overflow: hidden !important;
+        white-space: nowrap !important;
+        text-overflow: ellipsis !important;
+    }
+
+    .route-journey-arrow {
+        flex-shrink: 0 !important;
+        font-size: 14px !important;
+    }
+
+
+    /* -----------------------------------------------------
+       ROUTE STATS
+    ----------------------------------------------------- */
+
+    .route-stats {
+        gap: 7px !important;
+        margin-top: 10px !important;
+    }
+
+    .route-stat {
+        min-width: 0 !important;
+        padding: 9px !important;
+        gap: 7px !important;
+    }
+
+    .route-stat-icon {
+        font-size: 15px !important;
+    }
+
+    .route-stat span {
+        font-size: 9px !important;
+    }
+
+    .route-stat strong {
+        font-size: 13px !important;
+    }
+
+
+    /* -----------------------------------------------------
+       ROUTE STATUS
+    ----------------------------------------------------- */
+
+    .route-status {
+        margin-top: 10px !important;
+        padding-top: 9px !important;
+        font-size: 9px !important;
+    }
+
+
+    /* -----------------------------------------------------
+       MAP CONTROLS
+       Keep them away from the route panel
+    ----------------------------------------------------- */
+
+    .professional-map-controls {
+        gap: 5px !important;
+        padding: 5px !important;
+        border-radius: 12px !important;
+    }
+
+    .map-control-btn {
+        width: 38px !important;
+        height: 38px !important;
+        border-radius: 9px !important;
+        font-size: 19px !important;
+    }
+
+    .map-control-icon {
+        font-size: 15px !important;
+    }
+
+
+    /* -----------------------------------------------------
+       LEAFLET ZOOM
+    ----------------------------------------------------- */
+
+    .leaflet-control-zoom {
+        margin-left: 8px !important;
+        margin-bottom: 8px !important;
+    }
+
+    .leaflet-control-zoom a {
+        width: 32px !important;
+        height: 32px !important;
+        line-height: 32px !important;
+    }
+
+
+    /* -----------------------------------------------------
+       ROUTE ENDPOINT LABELS
+    ----------------------------------------------------- */
+
+    .route-start-marker,
+    .route-destination-marker {
+        max-width: 145px !important;
+        height: 30px !important;
+        padding: 4px 7px !important;
+    }
+
+    .route-start-marker small,
+    .route-destination-marker small {
+        max-width: 110px !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        white-space: nowrap !important;
+        font-size: 8px !important;
+    }
+
+
+    /* -----------------------------------------------------
+       MAP INFO
+    ----------------------------------------------------- */
+
+    .map-info {
+        max-width: 180px !important;
+        min-width: 0 !important;
+        padding: 9px 11px !important;
+        bottom: 12px !important;
+        right: 12px !important;
+    }
+
+    .map-info strong {
+        font-size: 12px !important;
+    }
+
+    .map-info span {
+        font-size: 9px !important;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 430px) {
+
+    .topbar {
+        height: 60px !important;
+        padding: 0 12px !important;
+    }
+
+    .brand-icon {
+        width: 36px !important;
+        height: 36px !important;
+    }
+
+    .brand h1 {
+        font-size: 14px !important;
+    }
+
+    .brand p {
+        font-size: 8px !important;
+    }
+
+    .theme-toggle {
+        width: 36px !important;
+        height: 36px !important;
+    }
+
+    .welcome {
+        padding: 20px 12px 16px !important;
+    }
+
+    .map-container {
+        height: 74vh !important;
+        min-height: 440px !important;
+    }
+
+    .route-info {
+        width: calc(100vw - 20px) !important;
+        max-width: none !important;
+        margin-left: 8px !important;
+    }
+
+    .route-info > div {
+        padding: 11px !important;
+    }
+
+    .route-card {
+        padding: 11px !important;
+    }
+
+    .route-stat {
+        padding: 8px !important;
+    }
+
+    .route-stat strong {
+        font-size: 12px !important;
+    }
+
+    .professional-map-controls {
+        padding: 4px !important;
+        gap: 4px !important;
+    }
+
+    .map-control-btn {
+        width: 36px !important;
+        height: 36px !important;
+    }
+}
+/* =========================================================
+   FINAL ROUTE CARD COMPRESSION
+   MOBILE ONLY — ROUTING LOGIC UNTOUCHED
+========================================================= */
+
+@media (max-width: 700px) {
+
+    /* Route panel itself */
+    .route-info {
+        width: calc(100vw - 16px) !important;
+        max-width: 440px !important;
+        margin: 0 0 6px 8px !important;
+    }
+
+    .route-info > div {
+        padding: 8px !important;
+        border-radius: 12px !important;
+    }
+
+    .route-card {
+        width: 100% !important;
+        padding: 8px !important;
+        border-radius: 12px !important;
+    }
+
+
+    /* Header */
+    .route-card-header {
+        padding-bottom: 6px !important;
+    }
+
+    .route-icon {
+        width: 28px !important;
+        height: 28px !important;
+        font-size: 14px !important;
+    }
+
+    .route-card-title {
+        gap: 6px !important;
+    }
+
+    .route-card-title strong {
+        font-size: 13px !important;
+    }
+
+    .route-card-title span {
+        font-size: 9px !important;
+    }
+
+
+    /* Journey */
+    .route-journey {
+        gap: 5px !important;
+        margin-top: 6px !important;
+        padding: 6px 8px !important;
+        min-height: 0 !important;
+        font-size: 9px !important;
+        border-radius: 9px !important;
+    }
+
+    .route-journey-arrow {
+        font-size: 12px !important;
+    }
+
+
+    /* Statistics */
+    .route-stats {
+        gap: 5px !important;
+        margin-top: 6px !important;
+    }
+
+    .route-stat {
+        padding: 6px 7px !important;
+        gap: 5px !important;
+        border-radius: 9px !important;
+    }
+
+    .route-stat-icon {
+        font-size: 13px !important;
+    }
+
+    .route-stat span {
+        font-size: 8px !important;
+    }
+
+    .route-stat strong {
+        margin-top: 1px !important;
+        font-size: 12px !important;
+    }
+
+
+    /* Alternative routes */
+    .route-status {
+        margin-top: 5px !important;
+        padding-top: 6px !important;
+        font-size: 8px !important;
+    }
+
+
+    /* Compact the alternative-routes section */
+    .route-card > * {
+        margin-bottom: 0 !important;
+    }
+
+    .route-card [class*="alternative"] {
+        margin-top: 6px !important;
+        padding-top: 6px !important;
+    }
+
+
+    /* Smaller map controls */
+    .professional-map-controls {
+        gap: 3px !important;
+        padding: 3px !important;
+    }
+
+    .map-control-btn {
+        width: 36px !important;
+        height: 36px !important;
+    }
+}
+
+
+/* =========================================================
+   EXTRA SMALL PHONES
+========================================================= */
+
+@media (max-width: 430px) {
+
+    .route-info {
+        width: calc(100vw - 10px) !important;
+        margin-left: 5px !important;
+        margin-bottom: 5px !important;
+    }
+
+    .route-info > div,
+    .route-card {
+        padding: 7px !important;
+        border-radius: 11px !important;
+    }
+
+    .route-icon {
+        width: 27px !important;
+        height: 27px !important;
+    }
+
+    .route-journey {
+        padding: 5px 7px !important;
+    }
+
+    .route-stat {
+        padding: 5px 6px !important;
+    }
+
+    .route-stats {
+        gap: 4px !important;
+        margin-top: 5px !important;
+    }
+
+    .route-status {
+        margin-top: 4px !important;
+        padding-top: 5px !important;
+    }
+}
